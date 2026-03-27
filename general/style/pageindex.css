@@ -1,0 +1,77 @@
+/* Section One : class .memory */
+.title_memory{
+    margin: 1.5em 0 1em 0;
+    text-align: center;
+}
+
+.img_memory{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    flex-wrap: wrap;
+}
+
+figure{
+    margin: 0;
+    text-align: center;
+}
+
+figure img{
+    height: 15em;
+    width: 20em;
+    border-radius: 20px;
+    object-fit: cover;
+    opacity: 1;
+}
+
+figure:hover img{
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+    opacity: .5;
+}
+
+figcaption{
+    margin: 0;
+    position: relative;
+    top: -50%;
+    left: 13%;
+    opacity: 0;
+    max-width: 13em;
+}
+
+figure:hover figcaption {
+    -webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+figure p{
+    margin: 0;
+}
+
+
+/* Section Two : class .multiple_memory */
+.multiple_memory{
+    margin: 7em 0 3.5em 0;
+    text-align: center;
+}
+
+.text_mult{
+    font-style: italic;
+    font-size: 1.3em;
+}
+
+.title_mult{
+    margin-bottom: 1.4em;
+}
+
+.button_mult{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.button_mult button{
+    padding: 0.7em 2.5em;
+}

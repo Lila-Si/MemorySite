@@ -15,6 +15,7 @@
     --white: #FFFFFF;
     --primary-back:#FCFCFC;
     --primary-element:#C89DED;
+    --secondary-element: #B175E6;
 
     /* Text */
     --title-font: 'Merriweather';
@@ -64,9 +65,13 @@ a:hover{
 button{
     border-style: none;
     border-radius: 5px;
-    padding: 0.7em 1.2em;
+    background-color: var(--primary-element);
+    color: var(--white);
+    font-weight: 500;
 }
 
-/* button:hover{
-
-} */
+button:hover{
+    cursor: pointer;
+    background-color: var(--secondary-element);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
