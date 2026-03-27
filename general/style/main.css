@@ -1,0 +1,72 @@
+/* Import (police and css pages) */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+@import 'pageindex.css';
+
+
+
+/* Design System */
+
+:root{
+    /* Colors */
+    --black: #000000;
+    --white: #FFFFFF;
+    --primary-back:#FCFCFC;
+    --primary-element:#C89DED;
+
+    /* Text */
+    --title-font: 'Merriweather';
+    --body-font: 'Google Sans';
+
+}
+
+/* Typo */
+h1 {
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+p, figcaption, a, button {
+    font-family: var(--body-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+
+/* Elements General Style */
+body{
+    margin: 0;
+    background-color: var(--primary-back);
+}
+
+a {
+    color: var(--black);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.16rem;
+}
+
+a:hover{
+    color: var(--primary-element);
+}
+
+button{
+    border-style: none;
+    border-radius: 5px;
+    padding: 0.7em 1.2em;
+}
+
+/* button:hover{
+
+} */
