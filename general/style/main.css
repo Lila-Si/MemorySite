@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
-@import url(pageindex.css);
+@import url(pageindex.css); /* À faire : Rendre les transitions plus douces (boutons et images). Effet liquid glass au lieu d'une opacité pour les images hover ? */
 @import url(pagememory.css);
 
 
@@ -31,6 +31,7 @@ h1 {
     font-weight: 500;
     font-size: 3rem;
 }
+/* J'aimerais bien rajouter un effet surlignement (couleur primary-element) pour les titres */
 
 h2 {
     font-family: var(--title-font);

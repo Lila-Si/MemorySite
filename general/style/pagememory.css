@@ -1,0 +1,30 @@
+/* Header : class .gameInfo */
+.gameInfo{
+    margin: 2em 6em 4em 20em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameInfo_scoti{
+    display: flex;
+    gap: 2em;
+}
+
+
+/* Other (div section for img cards) : class .cards */
+.cards{
+    margin-bottom: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-around;
+}
+/* Peut-être plus utiliser grid pour les cartes ? Il me faudrait max six colonnes, un espacement uniforme. */
+
+.cards img{
+    height: 12em;
+    width: 12em;
+    object-fit: cover;
+    border-radius: 20px;
+}
