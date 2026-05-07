@@ -21,14 +21,14 @@ figure img{
     width: 18em;
     border-radius: 20px;
     object-fit: cover;
-    opacity: 1;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    -webkit-filter: blur(0);
+	filter: blur(0);
 }
 
 figure:hover img{
-	-webkit-transition: .4s ease-in-out;
-	transition: .4s ease-in-out;
-    opacity: .5;
+    -webkit-filter: blur(2px);
+	filter: blur(2px);
 }
 
 figcaption{
@@ -36,14 +36,14 @@ figcaption{
     position: relative;
     top: -50%;
     left: 13%;
-    opacity: 0;
     max-width: 13em;
+    color: var(--white);
+    text-shadow: 2px 2px 15px #000000;
+    visibility: hidden;
 }
 
-figure:hover figcaption {
-    -webkit-transition: .4s ease-in-out;
-	transition: .4s ease-in-out;
-    opacity: 1;
+figure:hover figcaption{
+    visibility: visible;
 }
 
 figure p{
