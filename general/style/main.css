@@ -30,8 +30,11 @@ h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 3rem;
+    text-decoration: underline rgba(200, 157, 237, 0.4); /* Rgb color for --primary-element var ! */
+    text-decoration-thickness: 0.4em;
+    text-underline-offset: -0.3em;
+    text-decoration-skip-ink: none;
 }
-/* J'aimerais bien rajouter un effet surlignement (couleur primary-element) pour les titres */
 
 h2 {
     font-family: var(--title-font);

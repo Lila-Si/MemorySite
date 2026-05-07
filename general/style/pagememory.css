@@ -14,11 +14,11 @@
 
 /* Other (div section for img cards) : class .cards */
 .cards{
-    margin-bottom: 3em;
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 1.5em;
+    margin-bottom: 2em;
 }
 /* Peut-être plus utiliser grid pour les cartes ? Il me faudrait max six colonnes, un espacement uniforme. */
 
