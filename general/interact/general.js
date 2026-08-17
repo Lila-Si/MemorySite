@@ -3,7 +3,7 @@
 let score = 0;
 
 /* Pop-up avec rappel des règles puis donne le choix entre un mode challenge (temps limité, à rebours) et normal */
-if (/* mode challenge choisi -bouton correspondant cliqué-) */) {
+if (/* mode challenge choisi -bouton correspondant cliqué- */) {
     modeChallenge();
 } else {
     modeNormal();
