@@ -1,20 +1,25 @@
 /* Gérer le bon affiche du memory selon celui cliqué (appel des donnees, affichage) */
 
-/* Doit disposer en aleatoire !!!!!!!!!! */
+function initialization(memory) {
+    for (let i = 0; i < memory.length; i++) {
+        /* Affiche le dos des cartes, le nombre qu'il y en a, creer pour ca des img dans la div correspondante */
+    };
+    /* Faire ensuite en sorte que les cartes se trient aléatoirement */
+};
 
 /* Appel des ressources selon bouton cliqué */
 document.getElementById("memoryOne").addEventListener("click", () =>{
-    Initialization(memoryOne);
-    console.log("Bouton memory trois cliqué. Appel fonction initialization.");
+    initialization(memoryOne)
+    console.log("Bouton memory un cliqué. Appel fonction initialization.");
 });
 
 document.getElementById("memoryTwo").addEventListener("click", () =>{
-    Initialization(memoryTwo);
-    console.log("Bouton memory trois cliqué. Appel fonction initialization.");
+    initialization(memoryTwo);
+    console.log("Bouton memory deux cliqué. Appel fonction initialization.");
 });
 
 document.getElementById("memoryThree").addEventListener("click", () =>{
-    Initialization(memoryThree);
+    initialization(memoryThree);
     console.log("Bouton memory trois cliqué. Appel fonction initialization.");
 });
 
