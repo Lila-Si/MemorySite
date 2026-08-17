@@ -28,3 +28,5 @@ function modeChallenge() {
 function modeNormal() {
     /* Jeu classique, avec un timer qui compte juste le temps pris */
 };
+
+/* Importer les autres fichiers js !!!! (et voir si on peut appeler des fonctions d'autres fichiers) */
