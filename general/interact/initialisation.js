@@ -6,15 +6,13 @@ import { memoryOne } from './memories/memoryOne.js';
 import { memoryTwo } from './memories/memoryTwo.js';
 import { memoryThree } from './memories/memoryThree.js';
 
-/* const memoryOneEvent = document.getElementById('memoryone');
-const memoryTwoEvent = document.getElementById('memorytwo');
-const memoryThreeEvent = document.getElementById('memorythree'); */
+const chosenInfo = new URLSearchParams(window.location.search).get('memory');
 
 const memoryInfo = {
-    'one' : memoryOne,
-    'two' : memoryTwo,
-    'three' : memoryThree
-};
+    'one': memoryOne,
+    'two': memoryTwo,
+    'three': memoryThree
+}[chosenInfo];
 
 
 /* Fonction initialisation des cartes et triage aleatoire */
@@ -33,24 +31,9 @@ function initialization(memory) {
 };
 
 
+/* Check si l'info dans l'URL est valide et appele la fonction si oui */
 if (!memoryInfo) {
     console.log("Info en lien invalide");
 } else {
     initialization(memoryInfo);
 };
-
-/* Appel des ressources selon bouton cliqué */
-/* memoryOneEvent.addEventListener("click", () =>{
-    initialization(memoryOne)
-    console.log("Bouton memory un cliqué. Appel fonction initialization.");
-});
-
-memoryTwoEvent.addEventListener("click", () =>{
-    initialization(memoryTwo);
-    console.log("Bouton memory deux cliqué. Appel fonction initialization.");
-});
-
-memoryThreeEvent.addEventListener("click", () =>{
-    initialization(memoryThree);
-    console.log("Bouton memory trois cliqué. Appel fonction initialization.");
-}); */
