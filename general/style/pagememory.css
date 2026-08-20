@@ -13,7 +13,7 @@
 
 
 /* Other (div section for img cards) : class .cards */
-.cards{
+#cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -22,7 +22,7 @@
 }
 /* Peut-être plus utiliser grid pour les cartes ? Il me faudrait max six colonnes, un espacement uniforme. */
 
-.cards img{
+#cards img{
     height: 12em;
     width: 12em;
     object-fit: cover;
