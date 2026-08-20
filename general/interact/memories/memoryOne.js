@@ -32,5 +32,5 @@ export const memoryOne = [
   {
     image: "images/printemps4.png",
     id: 4
-  }
+  },
 ];

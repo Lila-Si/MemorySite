@@ -60,5 +60,5 @@ export const memoryTwo = [
     image: "images/test.png",
     writeInfo: "Une info écrite pour la seconde carte à ID = 6",
     id: 6
-  }
+  },
 ];

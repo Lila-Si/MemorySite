@@ -1,10 +1,23 @@
 /* Gérer le bon affiche du memory selon celui cliqué (appel des donnees, affichage) */
 
-/* Importer selon le bouton cliqué (pour faire moins lourd) */
-import { memoryOne } from './memories/memoryOne';
-import { memoryTwo } from './memories/memoryTwo';
-import { memoryThree } from './memories/memoryThree';
 
+/* Imports & variables */
+import { memoryOne } from './memories/memoryOne.js';
+import { memoryTwo } from './memories/memoryTwo.js';
+import { memoryThree } from './memories/memoryThree.js';
+
+/* const memoryOneEvent = document.getElementById('memoryone');
+const memoryTwoEvent = document.getElementById('memorytwo');
+const memoryThreeEvent = document.getElementById('memorythree'); */
+
+const memoryInfo = {
+    'one' : memoryOne,
+    'two' : memoryTwo,
+    'three' : memoryThree
+};
+
+
+/* Fonction initialisation des cartes et triage aleatoire */
 function initialization(memory) {
 
     const divContainer = document.getElementById('cards');
@@ -19,18 +32,25 @@ function initialization(memory) {
     /* Faire ensuite en sorte que les cartes se trient aléatoirement */
 };
 
+
+if (!memoryInfo) {
+    console.log("Info en lien invalide");
+} else {
+    initialization(memoryInfo);
+};
+
 /* Appel des ressources selon bouton cliqué */
-document.getElementById("memoryOne").addEventListener("click", () =>{
+/* memoryOneEvent.addEventListener("click", () =>{
     initialization(memoryOne)
     console.log("Bouton memory un cliqué. Appel fonction initialization.");
 });
 
-document.getElementById("memoryTwo").addEventListener("click", () =>{
+memoryTwoEvent.addEventListener("click", () =>{
     initialization(memoryTwo);
     console.log("Bouton memory deux cliqué. Appel fonction initialization.");
 });
 
-document.getElementById("memoryThree").addEventListener("click", () =>{
+memoryThreeEvent.addEventListener("click", () =>{
     initialization(memoryThree);
     console.log("Bouton memory trois cliqué. Appel fonction initialization.");
-});
+}); */
