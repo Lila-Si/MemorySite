@@ -89,4 +89,5 @@ button:hover{
 
 .show{
     opacity: 1;
+    animation: 1s;
 }

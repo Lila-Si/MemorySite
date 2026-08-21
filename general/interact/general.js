@@ -1,5 +1,7 @@
-/* Gérer les elements de jeu (score, verifier si les cartes sont egales
-   si oui ajouter un et les faire disparaitre, sinon les retourner à nouveau) */
+/* Gérer le jeu (mode, score, timer), animations (cartes qui se retournent) & event (victoire, échec) */
+
+
+/* Imports & variables */
 import { randomArray } from "./initialisation";
 
 let score = 0;
@@ -7,28 +9,32 @@ let gameOver = false;
 
 const memoryCards = document.getElementsByClassName('memory_cards');
 
+
+/* Fonction d'animation et code de vérification des cartes*/
 function animFlip () {
     if (gameOver) {
-        break;
+        return;
     };
     /* Animation, checker l'image, si back changer et rotate de 180, else changer et rotate aussi */
 };
 
 /* memoryCards.addEventListener("click", () =>{
     if (gameOver) {
-        break;
+        return;
     };
     animFlip();
     if (L'ID des cartes sont égales) {
         +1 au score
         et les faire disparaitre
-        if (Dernieres cartes restantes) {
-            Petite anim plus message pop-up comme quoi on a gagné
+        if (score == randomArray.length / 2) {
+            alert('Bravooooo, tu es arrivé au bout !');
+            return ;
     } else {
         Attendre 4s
         Retourner de nouveau les cartes
     };
 }); */
+
 
 /* Fonctions timer (mode challenge et normal) */
 function modeChallenge() {
@@ -50,7 +56,8 @@ function modeChallenge() {
         if (timeSec <= 0 && timeMin <= 0) {
             alert('Mince, plus de temps. Vous aurez peut-être plus de chance la prochaine fois !');
             gameOver = true;
-            break;
+            clearInterval(timer);
+            return;
         };
     }, 1000);
 };
@@ -64,7 +71,9 @@ function modeNormal() {
 
     clearInterval(timer);
     timer = setInterval(() => {
-        /* Si toutes les cartes trouvées, interrompre le timer */
+        if (score == randomArray.length / 2) {
+            return ;
+        };
         timeSec++;
         document.getElementById('timer_sec').textContent = timeSec;
         if (timeSec == 59) {
