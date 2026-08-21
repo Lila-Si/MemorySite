@@ -15,23 +15,28 @@ const memoryInfo = {
 }[chosenInfo];
 
 
-/* Fonction initialisation des cartes et triage aleatoire */
-function initialization(memory) {
+/* Fonctions (initialization & randomArray) */
+export function randomArray(memoryArrayRandom) {
+    memoryArrayRandom.sort(() => Math.random() - 0.5);
+};
+
+function initialization(memoryArray) {
 
     const divContainer = document.getElementById('cards');
 
-    for (let i = 0; i < memory.length; i++) {
+    for (let i = 0; i < memoryArray.length; i++) {
+
         const img = document.createElement('img');
+        img.className = 'memory_cards';
         img.src = '../../images/memoryOne/back.jpg';
 
         divContainer.appendChild(img);
-        /* Affiche le dos des cartes, le nombre qu'il y en a, creer pour ca des img dans la div correspondante */
     };
-    /* Faire ensuite en sorte que les cartes se trient aléatoirement */
+    randomArray(memoryArray);
 };
 
 
-/* Check si l'info dans l'URL est valide et appele la fonction si oui */
+/* Check l'info dans l'URL */
 if (!memoryInfo) {
     console.log("Info en lien invalide");
 } else {
