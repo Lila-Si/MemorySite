@@ -12,6 +12,38 @@
 }
 
 
+/* Popup */
+#popup{
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    height: 15em;
+    width: 40em;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 5em;
+    box-shadow: -7px 8px 38px 0px rgba(0,0,0,0.56);
+}
+
+#popup p{
+    text-align: justify;
+}
+
+.button_mode{
+    margin-top: 1em;
+    display: flex;
+    gap: 6em;
+}
+
+.button_mode button{
+    padding: 0.5em 1em;
+}
+
+
 /* Other (div section for img cards) : class .cards */
 #cards{
     display: flex;
@@ -20,7 +52,6 @@
     gap: 1.5em;
     margin-bottom: 2em;
 }
-/* Peut-être plus utiliser grid pour les cartes ? Il me faudrait max six colonnes, un espacement uniforme. */
 
 #cards img{
     height: 12em;

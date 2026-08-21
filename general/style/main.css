@@ -82,3 +82,11 @@ button:hover{
     background-color: var(--secondary-element);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+.hidden{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+}

@@ -4,6 +4,7 @@
 /* Import & variables */
 import { randomArray } from "./initialisation";
 
+let score = 0;
 const memoryCards = document.getElementsByClassName('memory_cards');
 
 memoryCards.addEventListener("click", () =>{
