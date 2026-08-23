@@ -15,7 +15,7 @@ function animFlip () {
     if (gameOver) {
         return;
     };
-    /* Animation, checker l'image, si back changer et rotate de 180, else changer et rotate aussi */
+    /* Animation, checker l'image, si back changer et rotate de 180*/
 };
 
 /* memoryCards.addEventListener("click", () =>{
@@ -24,10 +24,10 @@ function animFlip () {
     };
     animFlip();
     if (L'ID des cartes sont égales) {
-        +1 au score
+        score++;
         et les faire disparaitre
         if (score == memoryArrayRandom.length / 2) {
-            alert('Bravooooo, tu es arrivé au bout !');
+            alert('Bravooooo, tu es arrivé•e au bout !');
             return ;
     } else {
         Attendre 4s
@@ -37,25 +37,27 @@ function animFlip () {
 
 
 /* Fonctions timer (mode challenge et normal) */
+function zero_timer(num) {
+        return num < 10 ? '0' + num : num;
+}
+
 function modeChallenge() {
     let timer = null;
     let timeMin = 10;
     let timeSec = 0;
-    document.getElementById('timer_min').textContent = timeMin;
-    document.getElementById('timer_sec').textContent = timeSec;
+    document.getElementById('timer_min').textContent = zero_timer(timeMin);
+    document.getElementById('timer_sec').textContent = zero_timer(timeSec);
 
     clearInterval(timer);
     timer = setInterval(() => {
-        document.getElementById('zero_timersec').style.display = document.getElementById('zero_timersec').textContent < 10 ? "inline" : "none";
-        document.getElementById('zero_timermin').style.display = document.getElementById('zero_timermin').textContent < 10 ? "inline" : "none";
         if (timeSec > 0) {
             timeSec--;
-            document.getElementById('timer_sec').textContent = timeSec;
+            document.getElementById('timer_sec').textContent = zero_timer(timeSec);
         } else {
             timeSec = 59;
             timeMin--;
-            document.getElementById('timer_sec').textContent = timeSec;
-            document.getElementById('timer_min').textContent = timeMin;
+            document.getElementById('timer_sec').textContent = zero_timer(timeSec);
+            document.getElementById('timer_min').textContent = zero_timer(timeMin);
         }
         if (timeSec <= 0 && timeMin <= 0) {
             alert('Mince, plus de temps. Vous aurez peut-être plus de chance la prochaine fois !');
@@ -70,24 +72,22 @@ function modeNormal() {
     let timer = null;
     let timeMin = 0;
     let timeSec = 0;
-    document.getElementById('timer_min').textContent = timeMin;
-    document.getElementById('timer_sec').textContent = timeSec;
+    document.getElementById('timer_min').textContent = zero_timer(timeMin);
+    document.getElementById('timer_sec').textContent = zero_timer(timeSec);
 
     clearInterval(timer);
     timer = setInterval(() => {
         if (score == randomArray.length / 2) { /* Remplacer randomArray par memoryArrayRandom */
             return ;
         };
-        document.getElementById('zero_timersec').style.display = document.getElementById('zero_timersec').textContent < 10 ? "inline" : "none";
-        document.getElementById('zero_timermin').style.display = document.getElementById('zero_timermin').textContent < 10 ? "inline" : "none";
         if (timeSec != 59) {
             timeSec++;
-            document.getElementById('timer_sec').textContent = timeSec;
+            document.getElementById('timer_sec').textContent = zero_timer(timeSec);
         } else {
             timeSec = 0;
             timeMin++;
-            document.getElementById('timer_sec').textContent = timeSec;
-            document.getElementById('timer_min').textContent = timeMin;
+            document.getElementById('timer_sec').textContent = zero_timer(timeSec);
+            document.getElementById('timer_min').textContent = zero_timer(timeMin);
         }
     }, 1000);
 };
