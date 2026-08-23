@@ -8,21 +8,28 @@ import { memoryThree } from './memories/memoryThree.js';
 
 const chosenInfo = new URLSearchParams(window.location.search).get('memory');
 
-const memoryInfo = {
+const memory = {
     'one': memoryOne,
     'two': memoryTwo,
     'three': memoryThree
-}[chosenInfo];
+};
+
+export const memoryInfo = memory[chosenInfo];
 
 
 /* Fonctions (initialization & randomArray) */
 export function randomArray(memoryArrayRandom) {
     memoryArrayRandom.sort(() => Math.random() - 0.5);
+    return memoryArrayRandom;
 };
 
-function initialization(memoryArray) {
+export function initialization(memoryArray) {
 
     const divContainer = document.getElementById('cards');
+
+    if (!memoryArray) {
+        console.error('Tableau vide !');
+    };
 
     for (let i = 0; i < memoryArray.length; i++) {
 
@@ -32,13 +39,10 @@ function initialization(memoryArray) {
 
         divContainer.appendChild(img);
     };
-    randomArray(memoryArray);
 };
 
 
 /* Check l'info dans l'URL */
 if (!memoryInfo) {
-    console.log("Info en lien invalide");
-} else {
-    initialization(memoryInfo);
+    console.error("Info en lien invalide");
 };

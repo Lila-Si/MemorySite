@@ -2,7 +2,7 @@
 
 
 /* Imports & variables */
-import { randomArray } from "./initialisation";
+import { memoryInfo, randomArray, initialization } from './initialisation.js';
 
 let score = 0;
 let gameOver = false;
@@ -26,7 +26,7 @@ function animFlip () {
     if (L'ID des cartes sont égales) {
         +1 au score
         et les faire disparaitre
-        if (score == randomArray.length / 2) {
+        if (score == memoryArrayRandom.length / 2) {
             alert('Bravooooo, tu es arrivé au bout !');
             return ;
     } else {
@@ -46,13 +46,17 @@ function modeChallenge() {
 
     clearInterval(timer);
     timer = setInterval(() => {
-        timeSec--;
-        if (timeSec <= 0) {
+        document.getElementById('zero_timersec').style.display = document.getElementById('zero_timersec').textContent < 10 ? "inline" : "none";
+        document.getElementById('zero_timermin').style.display = document.getElementById('zero_timermin').textContent < 10 ? "inline" : "none";
+        if (timeSec > 0) {
+            timeSec--;
+            document.getElementById('timer_sec').textContent = timeSec;
+        } else {
             timeSec = 59;
             timeMin--;
+            document.getElementById('timer_sec').textContent = timeSec;
             document.getElementById('timer_min').textContent = timeMin;
         }
-        document.getElementById('timer_sec').textContent = timeSec;
         if (timeSec <= 0 && timeMin <= 0) {
             alert('Mince, plus de temps. Vous aurez peut-être plus de chance la prochaine fois !');
             gameOver = true;
@@ -71,16 +75,20 @@ function modeNormal() {
 
     clearInterval(timer);
     timer = setInterval(() => {
-        if (score == randomArray.length / 2) {
+        if (score == randomArray.length / 2) { /* Remplacer randomArray par memoryArrayRandom */
             return ;
         };
-        timeSec++;
-        document.getElementById('timer_sec').textContent = timeSec;
-        if (timeSec == 59) {
+        document.getElementById('zero_timersec').style.display = document.getElementById('zero_timersec').textContent < 10 ? "inline" : "none";
+        document.getElementById('zero_timermin').style.display = document.getElementById('zero_timermin').textContent < 10 ? "inline" : "none";
+        if (timeSec != 59) {
+            timeSec++;
+            document.getElementById('timer_sec').textContent = timeSec;
+        } else {
             timeSec = 0;
             timeMin++;
+            document.getElementById('timer_sec').textContent = timeSec;
             document.getElementById('timer_min').textContent = timeMin;
-        };
+        }
     }, 1000);
 };
 
@@ -88,10 +96,12 @@ function modeNormal() {
 /* Boutons qui lancent le jeu */
 document.getElementById('mode_challenge').addEventListener("click", () => {
     document.getElementById('popup').classList.add('hidden');
+    initialization(memoryInfo);
     modeChallenge();
 });
 
 document.getElementById('mode_normal').addEventListener("click", () => {
     document.getElementById('popup').classList.add('hidden');
+    initialization(memoryInfo);
     modeNormal();
 });
