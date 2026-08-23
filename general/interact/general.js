@@ -11,29 +11,42 @@ const memoryCards = document.getElementsByClassName('memory_cards');
 
 
 /* Fonction d'animation et code de vérification des cartes*/
-function animFlip () {
+function animFlip (card, backOrigin) {
     if (gameOver) {
         return;
     };
-    /* Animation, checker l'image, si back changer et rotate de 180*/
+    /* Animation, checker l'image, si back changer et rotate de 180, si param true rotate aussi*/
 };
 
-/* memoryCards.addEventListener("click", () =>{
+function cardScore(cardOne, cardTwo) {
+    /* Si l'id des cartes sont égales, score ++ et les faire disparaitre */
+    if (condition) {
+        if (score == randomArray.length / 2) {
+            alert('Bravooooo, tu es arrivé•e au bout !');
+            return;
+        };
+    } else {
+        animFlip(cardOne, true);
+        animFlip(cardTwo, true);
+    };
+};
+
+memoryCards.addEventListener("click", event =>{
     if (gameOver) {
         return;
     };
-    animFlip();
-    if (L'ID des cartes sont égales) {
-        score++;
-        et les faire disparaitre
-        if (score == memoryArrayRandom.length / 2) {
-            alert('Bravooooo, tu es arrivé•e au bout !');
-            return ;
-    } else {
-        Attendre 4s
-        Retourner de nouveau les cartes
-    };
-}); */
+    const cardTarget = event.target;
+    animFlip(cardTarget, false);
+
+    memoryCards.addEventListener("click", event =>{
+        if (gameOver) {
+            return;
+        };
+        const cardTargetTwo = event.target;
+        animFlip(cardTargetTwo, false);
+        cardScore(cardTarget, cardTargetTwo);
+    });
+});
 
 
 /* Fonctions timer (mode challenge et normal) */
