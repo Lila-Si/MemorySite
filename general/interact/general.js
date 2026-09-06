@@ -2,26 +2,46 @@
 
 
 /* Imports & variables */
-import { memoryInfo, randomArray, initialization } from './initialisation.js';
+import { memoryInfo, memoryImgBack, randomArray, initialization } from './initialisation.js';
 
 let score = 0;
+const scoreElement = document.getElementById('score_num');
+
 let gameOver = false;
 
-const memoryCards = document.getElementsByClassName('memory_cards');
+const memoryCards = document.getElementById('cards');
+let firstCard = null;
+let oneCardActive = false;
+
+const tableauRandomise = randomArray(memoryInfo);
 
 
 /* Fonction d'animation et code de vérification des cartes*/
-function animFlip (card, backOrigin) {
+/* function animFlip (card, backOrigin) {
     if (gameOver) {
         return;
     };
-    /* Animation, checker l'image, si back changer et rotate de 180, si param true rotate aussi*/
+    if (card.src == memoryImgBack) {
+        const tableauImg = tableauRandomise.map(({ image }) => image);
+        document.card.style.rotate = '180deg';
+        card.src = tableauImg[card];
+    } else if (backOrigin == true) {
+        document.card.style.rotate = '180deg';
+        card.src = memoryImgBack;
+    };
 };
 
 function cardScore(cardOne, cardTwo) {
-    /* Si l'id des cartes sont égales, score ++ et les faire disparaitre */
-    if (condition) {
-        if (score == randomArray.length / 2) {
+    const tableauId = tableauRandomise.map(({ id }) => id);
+    const firstId = tableauId[cardOne];
+    const secondId = tableauId[cardTwo];
+
+    if (firstId == secondId) {
+        score++;
+        scoreElement.textContent = score;
+        document.cardOne.style.opacity = 'hidden';
+        document.cardTwo.style.opacity = 'hidden';
+        if (score == tableauRandomise.length / 2) {
             alert('Bravooooo, tu es arrivé•e au bout !');
             return;
         };
@@ -31,21 +51,24 @@ function cardScore(cardOne, cardTwo) {
     };
 };
 
-/* memoryCards.addEventListener("click", event =>{
+memoryCards.addEventListener("click", event =>{
     if (gameOver) {
         return;
     };
-    const cardTarget = event.target;
+    const cardTarget = event.target.closest(".memory_cards");
+    if (!cardTarget) {
+         return;       
+    }
+
     animFlip(cardTarget, false);
 
-    memoryCards.addEventListener("click", event =>{
-        if (gameOver) {
-            return;
-        };
-        const cardTargetTwo = event.target;
-        animFlip(cardTargetTwo, false);
-        cardScore(cardTarget, cardTargetTwo);
-    });
+    if (firstCard === null) {
+        firstCard = cardTarget;
+    } else {
+        cardScore(firstCard, cardTarget);
+        firstCard = null;
+    };
+    console.log(firstCard, cardTarget);
 }); */
 
 

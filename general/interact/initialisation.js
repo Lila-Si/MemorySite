@@ -22,7 +22,7 @@ const memoryImg = {
 
 export const memoryInfo = memory[chosenInfo];
 
-const memoryImgBack = memoryImg[chosenInfo];
+export const memoryImgBack = memoryImg[chosenInfo];
 
 
 /* Fonctions (initialization & randomArray) */
