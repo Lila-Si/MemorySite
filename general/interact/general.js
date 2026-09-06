@@ -8,68 +8,76 @@ let score = 0;
 const scoreElement = document.getElementById('score_num');
 
 let gameOver = false;
+let tableauRandomise = [];
 
 const memoryCards = document.getElementById('cards');
 let firstCard = null;
 let oneCardActive = false;
 
-const tableauRandomise = randomArray(memoryInfo);
-
 
 /* Fonction d'animation et code de vérification des cartes*/
-/* function animFlip (card, backOrigin) {
+function setupCards() {
+    tableauRandomise = randomArray(memoryInfo);
+
+    initialization(memoryInfo);
+
+    document.querySelectorAll(".memory_cards").forEach((card, i) => {
+        card.dataset.id = String(tableauRandomise[i].id);
+        card.dataset.image = tableauRandomise[i].image;
+        card.src = memoryImgBack;
+    });
+
+    return tableauRandomise
+};
+
+
+function scoreAdd(cardOne, cardTwo) {
+    return cardOne.dataset.id === cardTwo.dataset.id;
+}
+
+memoryCards.addEventListener('click', event => {
     if (gameOver) {
         return;
     };
-    if (card.src == memoryImgBack) {
-        const tableauImg = tableauRandomise.map(({ image }) => image);
-        document.card.style.rotate = '180deg';
-        card.src = tableauImg[card];
-    } else if (backOrigin == true) {
-        document.card.style.rotate = '180deg';
-        card.src = memoryImgBack;
+    if (oneCardActive) {
+        return;
     };
-};
+    const cardTarget = event.target.closest('.memory_cards');
+    if (!cardTarget || cardTarget.classList.contains('matched')) {
+        return;
+    };
+    if (cardTarget === firstCard) {
+        return;
+    };
 
-function cardScore(cardOne, cardTwo) {
-    const tableauId = tableauRandomise.map(({ id }) => id);
-    const firstId = tableauId[cardOne];
-    const secondId = tableauId[cardTwo];
+    cardTarget.src = cardTarget.dataset.image;
+    if (firstCard === null) {
+        firstCard = cardTarget
+        return;
+    };
 
-    if (firstId == secondId) {
+    oneCardActive = true;
+    const cardOne = firstCard;
+    const cardTwo = cardTarget;
+    firstCard = null;
+
+    if (scoreAdd(cardOne, cardTwo)) {
         score++;
         scoreElement.textContent = score;
-        document.cardOne.style.opacity = 'hidden';
-        document.cardTwo.style.opacity = 'hidden';
+        cardOne.classList.add('matched');
+        cardTwo.classList.add('matched');
+        oneCardActive = false;
         if (score == tableauRandomise.length / 2) {
-            alert('Bravooooo, tu es arrivé•e au bout !');
-            return;
+            setTimeout(() => alert("Bravooooo, tu es arrivé•e au bout !"), 400);
         };
     } else {
-        animFlip(cardOne, true);
-        animFlip(cardTwo, true);
+        setTimeout(() => {
+            cardOne.src = memoryImgBack;
+            cardTwo.src = memoryImgBack;
+            oneCardActive = false;
+        }, 900);
     };
-};
-
-memoryCards.addEventListener("click", event =>{
-    if (gameOver) {
-        return;
-    };
-    const cardTarget = event.target.closest(".memory_cards");
-    if (!cardTarget) {
-         return;       
-    }
-
-    animFlip(cardTarget, false);
-
-    if (firstCard === null) {
-        firstCard = cardTarget;
-    } else {
-        cardScore(firstCard, cardTarget);
-        firstCard = null;
-    };
-    console.log(firstCard, cardTarget);
-}); */
+});
 
 
 /* Fonctions timer (mode challenge et normal) */
@@ -113,7 +121,7 @@ function modeNormal() {
 
     clearInterval(timer);
     timer = setInterval(() => {
-        if (score == randomArray.length / 2) { /* Remplacer randomArray par memoryArrayRandom */
+        if (score == tableauRandomise.length / 2) { /* Remplacer randomArray par memoryArrayRandom */
             return ;
         };
         if (timeSec != 59) {
@@ -132,12 +140,12 @@ function modeNormal() {
 /* Boutons qui lancent le jeu */
 document.getElementById('mode_challenge').addEventListener("click", () => {
     document.getElementById('popup').classList.add('hidden');
-    initialization(memoryInfo);
+    setupCards();
     modeChallenge();
 });
 
 document.getElementById('mode_normal').addEventListener("click", () => {
     document.getElementById('popup').classList.add('hidden');
-    initialization(memoryInfo);
+    setupCards();
     modeNormal();
 });

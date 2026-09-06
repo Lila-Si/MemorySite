@@ -2,35 +2,35 @@
 
 export const memoryOne = [
   {
-    image: "images/printemps.png",
+    image: "/images/memoryOne/printemps.jpg",
     id: 1
   },
   {
-    image: "images/printemps.png",
+    image: "/images/memoryOne/printemps.jpg",
     id: 1
   },
   {
-    image: "images/printemps2.png",
+    image: "/images/memoryOne/printemps2.jpg",
     id: 2
   },
   {
-    image: "images/printemps2.png",
+    image: "/images/memoryOne/printemps2.jpg",
     id: 2
   },
   {
-    image: "images/printemps3.png",
+    image: "/images/memoryOne/printemps3.jpg",
     id: 3
   },
   {
-    image: "images/printemps3.png",
+    image: "/images/memoryOne/printemps3.jpg",
     id: 3
   },
   {
-    image: "images/printemps4.png",
+    image: "/images/memoryOne/printemps4.jpg",
     id: 4
   },
   {
-    image: "images/printemps4.png",
+    image: "/images/memoryOne/printemps4.jpg",
     id: 4
   }
 ];

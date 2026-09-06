@@ -2,63 +2,51 @@
 
 export const memoryThree = [
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 1",
+    image: "/images/memoryThree/hiver.jpg",
     id: 1
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 1",
+    image: "/images/memoryThree/hiver.jpg",
     id: 1
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 2",
+    image: "/images/memoryThree/hiver2.jpg",
     id: 2
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 2",
+    image: "/images/memoryThree/hiver2.jpg",
     id: 2
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 3",
+    image: "/images/memoryThree/hiver3.jpg",
     id: 3
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 3",
+    image: "/images/memoryThree/hiver3.jpg",
     id: 3
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 4",
+    image: "/images/memoryThree/hiver4.jpg",
     id: 4
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 4",
+    image: "/images/memoryThree/hiver4.jpg",
     id: 4
   },
     {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 5",
+    image: "/images/memoryThree/hiver.jpg",
     id: 5
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 5",
+    image: "/images/memoryThree/hiver.jpg",
     id: 5
   },
     {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la carte à ID = 6",
+    image: "/images/memoryThree/hiver2.jpg",
     id: 6
   },
   {
-    image: "images/test.png",
-    writeInfo: "Une info écrite pour la seconde carte à ID = 6",
+    image: "/images/memoryThree/hiver2.jpg",
     id: 6
   },
 ];

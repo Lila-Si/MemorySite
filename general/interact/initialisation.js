@@ -15,9 +15,9 @@ const memory = {
 };
 
 const memoryImg = {
-    'one': '../../images/memoryOne/back.jpg',
-    'two': '../../images/memoryTwo/back.jpg',
-    'three': '../../images/memoryThree/back.jpg'
+    'one': '/images/memoryOne/back.jpg',
+    'two': '/images/memoryTwo/back.jpg',
+    'three': '/images/memoryThree/back.jpg'
 };
 
 export const memoryInfo = memory[chosenInfo];
@@ -27,8 +27,7 @@ export const memoryImgBack = memoryImg[chosenInfo];
 
 /* Fonctions (initialization & randomArray) */
 export function randomArray(memoryArrayRandom) {
-    memoryArrayRandom.sort(() => Math.random() - 0.5);
-    return memoryArrayRandom;
+    return [...memoryArrayRandom].sort(() => Math.random() - 0.5);
 };
 
 export function initialization(memoryArray) {
