@@ -14,7 +14,15 @@ const memory = {
     'three': memoryThree
 };
 
+const memoryImg = {
+    'one': '../../images/memoryOne/back.jpg',
+    'two': '../../images/memoryTwo/back.jpg',
+    'three': '../../images/memoryThree/back.jpg'
+};
+
 export const memoryInfo = memory[chosenInfo];
+
+const memoryImgBack = memoryImg[chosenInfo];
 
 
 /* Fonctions (initialization & randomArray) */
@@ -35,7 +43,7 @@ export function initialization(memoryArray) {
 
         const img = document.createElement('img');
         img.className = 'memory_cards';
-        img.src = '../../images/memoryOne/back.jpg';
+        img.src = memoryImgBack;
 
         divContainer.appendChild(img);
     };

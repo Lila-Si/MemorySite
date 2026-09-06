@@ -31,7 +31,7 @@ function cardScore(cardOne, cardTwo) {
     };
 };
 
-memoryCards.addEventListener("click", event =>{
+/* memoryCards.addEventListener("click", event =>{
     if (gameOver) {
         return;
     };
@@ -46,7 +46,7 @@ memoryCards.addEventListener("click", event =>{
         animFlip(cardTargetTwo, false);
         cardScore(cardTarget, cardTargetTwo);
     });
-});
+}); */
 
 
 /* Fonctions timer (mode challenge et normal) */
