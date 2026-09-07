@@ -75,7 +75,7 @@ memoryCards.addEventListener('click', event => {
             cardOne.src = memoryImgBack;
             cardTwo.src = memoryImgBack;
             oneCardActive = false;
-        }, 900);
+        }, 1000);
     };
 });
 
