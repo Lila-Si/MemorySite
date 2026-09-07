@@ -94,6 +94,9 @@ function modeChallenge() {
 
     clearInterval(timer);
     timer = setInterval(() => {
+        if (score == tableauRandomise.length / 2) {
+            return ;
+        };
         if (timeSec > 0) {
             timeSec--;
             document.getElementById('timer_sec').textContent = zero_timer(timeSec);
@@ -121,7 +124,7 @@ function modeNormal() {
 
     clearInterval(timer);
     timer = setInterval(() => {
-        if (score == tableauRandomise.length / 2) { /* Remplacer randomArray par memoryArrayRandom */
+        if (score == tableauRandomise.length / 2) {
             return ;
         };
         if (timeSec != 59) {
