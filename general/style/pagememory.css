@@ -61,7 +61,7 @@
     border-radius: 20px;
 }
 
-.memory_cards .matched {
+.matched {
     opacity: 0.35;
     cursor: default;
 }
